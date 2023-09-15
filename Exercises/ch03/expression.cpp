@@ -1,5 +1,16 @@
+#include <iostream>
+using namespace std;
+
 void new_line()
 {
     cout << endl;
 }
-new_line + 5
+
+int main()
+{
+    cout << "Hi " << endl;
+    new_line; 
+    cout << "bye"
+    <<  endl;
+    return 0;
+}

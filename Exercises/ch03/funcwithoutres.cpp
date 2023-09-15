@@ -1,6 +1,12 @@
-int foo()
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+void new_line()
 {
-    return 1234;
+    cout << endl;
 }
 
-foo();
+int main(){
+    newline() + 7
+}
