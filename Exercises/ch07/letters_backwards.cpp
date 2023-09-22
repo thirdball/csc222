@@ -2,19 +2,12 @@
 #include <string>
 using namespace std;
 
-string backwards(string g) {
-    string reversed = g;
-    int last = g.length() - 1;
-
-    for (int i = 0; i<= last; i++){
-    reversed[i]= g[last-1];
-}
-return reversed;
-}
+string word = "banana";
 
 int main(){
-    string word = "bananas";
-    cout << word << " backwards is " << backwards(word) << endl;
-    return 0;
-}
-
+int index = word.length();
+while (index > -1) {
+    char letter = word[index];
+    cout << letter;
+    index = index - 1;
+}}
