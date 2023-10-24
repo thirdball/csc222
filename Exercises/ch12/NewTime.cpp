@@ -48,5 +48,5 @@ current_time.print_time();
     return 0;
 }
 
-//the result was the same with 3 int arguments
+//the result was the same with 3 int arguments before adding the Time(int h, int m, int s); constructor
 
