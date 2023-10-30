@@ -1,19 +1,26 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
 
-int main() {
-    const int ArraySize = 5;
-    int numbers[ArraySize] = {2, 3, 5, 0, 1};  
-    int sum = 0; 
-    int* ptr = numbers;  
 
-    for (int i = 0; i < ArraySize; i++) {
-        sum += *ptr;  
-        ptr++;  
+void Funk(){
+    int a[5], i, s = 0;
+    int *ptr;
+
+
+    ptr = a;
+    for (i = 0; i < 5; i++) {
+       s = s + *(ptr + i);
     }
 
-    cout << "Sum of the elements: " << sum << endl;
-
-    return 0;
+cout << "\nSum of elements :" << s
 }
 
+int main(){
+
+    cout << "Enter th numbers to be added: ";
+    for (i = 0; i < 5; i++) {
+        cin >> a[i];
+    }
+cout << Funk << endl;
+
+}
