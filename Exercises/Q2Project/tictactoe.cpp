@@ -56,7 +56,7 @@ int main() {
     while (true) {
         PrintBoard();
 
-        printw("Player %c's turn. Enter row and clm with space in between:): ", currentPlayer);
+        printw("Player %c's turn. Enter row and clm with space in between: ", currentPlayer);
         refresh();
 
         scanw("%d %d", &row, &col);
@@ -65,7 +65,7 @@ int main() {
             board[row - 1][col - 1] = currentPlayer;
 
             if (checkWin(currentPlayer)) {
-                printw("Player %c wins!\n", currentPlayer);
+                printw("Player %c wins! :)\n", currentPlayer);
                 break;
             } else if (BoardFull()) {
                 printw("It's a tie!\n");
