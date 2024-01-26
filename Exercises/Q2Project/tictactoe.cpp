@@ -1,16 +1,17 @@
 #include <iostream>
 #include <ncurses.h>
-#include <stdlib.h>
 
 char board[3][3] = {{' ', ' ', ' '}, {' ', ' ', ' '}, {' ', ' ', ' '}};
 
 void PrintBoard() {
+    clear(); 
     for (int i = 0; i < 3; ++i) {
         for (int j = 0; j < 3; ++j) {
             printw("%c ", board[i][j]);
         }
         printw("\n");
     }
+    refresh(); 
 }
 
 bool BoardFull() {
@@ -24,8 +25,8 @@ bool BoardFull() {
     return true;
 }
 
-bool CheckWin(char player) {
-    
+bool checkWin(char player) {
+
     for (int i = 0; i < 3; ++i) {
         if ((board[i][0] == player && board[i][1] == player && board[i][2] == player) ||
             (board[0][i] == player && board[1][i] == player && board[2][i] == player)) {
@@ -41,47 +42,47 @@ bool CheckWin(char player) {
     return false;
 }
 
+void clearTerminal() {
+    system("clear"); 
+}
+
 int main() {
-    initscr(); 
+    initscr();
     keypad(stdscr, TRUE); 
 
-    char CurrentPlayer = 'X';
-    int row, col; 
+    char currentPlayer = 'X';
+    int row, col;
 
     while (true) {
         PrintBoard();
 
-        printw("Player %c's turn. Enter row and column with a space in between: ", CurrentPlayer);
+        printw("Player %c's turn. Enter row and clm with space in between:): ", currentPlayer);
         refresh();
 
         scanw("%d %d", &row, &col);
 
         if (row >= 1 && row <= 3 && col >= 1 && col <= 3 && board[row - 1][col - 1] == ' ') {
-            board[row - 1][col - 1] = CurrentPlayer;
+            board[row - 1][col - 1] = currentPlayer;
 
-            if (CheckWin(CurrentPlayer)) {
-                printw("Player %c wins! :)\n", CurrentPlayer);
+            if (checkWin(currentPlayer)) {
+                printw("Player %c wins!\n", currentPlayer);
                 break;
             } else if (BoardFull()) {
                 printw("It's a tie!\n");
                 break;
             }
 
-            CurrentPlayer = (CurrentPlayer == 'X') ? 'O' : 'X';
+            currentPlayer = (currentPlayer == 'X') ? 'O' : 'X';
         } else {
             printw("Invalid move. Try again.\n");
         }
 
-       int count = 1;
-        if (count % 1 == 0){
-        system("clear");
-        }
-
         refresh();
+        clearTerminal(); 
     }
     getch();
-
     endwin();
     return 0;
 }
+
 
