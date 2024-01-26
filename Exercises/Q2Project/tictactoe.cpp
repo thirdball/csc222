@@ -72,8 +72,8 @@ int main() {
             printw("Invalid move. Try again.\n");
         }
 
-        int count = 2;
-        if (count % 2 == 0){
+       int count = 1;
+        if (count % 1 == 0){
         system("clear");
         }
 
