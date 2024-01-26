@@ -46,7 +46,7 @@ int main() {
     keypad(stdscr, TRUE); 
 
     char CurrentPlayer = 'X';
-    int row, col;
+    int row, col; 
 
     while (true) {
         PrintBoard();
